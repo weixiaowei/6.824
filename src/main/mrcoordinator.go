@@ -9,7 +9,9 @@ package main
 // Please do not change this file.
 //
 
-import "6.824/mr"
+import (
+	"6.824/mr"
+)
 import "time"
 import "os"
 import "fmt"
@@ -22,8 +24,11 @@ func main() {
 
 	m := mr.MakeCoordinator(os.Args[1:], 10)
 	for m.Done() == false {
+		fmt.Fprintf(os.Stderr, "没有参与呢...\n")
 		time.Sleep(time.Second)
 	}
 
 	time.Sleep(time.Second)
+	fmt.Fprintf(os.Stderr, "coor退出...\n")
+
 }
